@@ -1,3 +1,5 @@
+package default;
+
 import java.time.LocalDate;
 
 public interface Codificador {
