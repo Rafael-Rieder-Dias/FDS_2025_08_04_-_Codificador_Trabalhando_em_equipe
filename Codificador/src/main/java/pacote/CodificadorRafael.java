@@ -1,12 +1,14 @@
 package pacote;
 
+import java.time.LocalDate;
+
 public class CodificadorRafael implements Codificador{
     public String getNome(){
         return "Codificador Rafael";
     }
 
     public LocalDate getDataCriacao(){
-        return LocalDate.of(2025, 08, 04);
+        return LocalDate.of(2025, 8, 04);
     }
 
     public int getNivelSeguranca(){
@@ -19,7 +21,7 @@ public class CodificadorRafael implements Codificador{
         
 
         for (char c : str.toCharArray()) {
-            encoded.append((char) (c + 1));
+            encoded.append((char) (c + 14));
         }
 
         return encoded.toString();
@@ -29,7 +31,7 @@ public class CodificadorRafael implements Codificador{
         StringBuilder encoded = new StringBuilder();
         
         for (char c : str.toCharArray()) {
-            encoded.append((char) (c - 1));
+            encoded.append((char) (c - 14));
         }
         
         return encoded.toString();
