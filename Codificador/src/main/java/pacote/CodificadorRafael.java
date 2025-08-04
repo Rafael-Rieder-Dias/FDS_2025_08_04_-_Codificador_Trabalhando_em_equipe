@@ -16,10 +16,14 @@ public class CodificadorRafael implements Codificador{
     public String codifica(String str) {
         StringBuilder encoded = new StringBuilder();
 
-        
-
-        for (char c : str.toCharArray()) {
-            encoded.append((char) (c + 1));
+        int index = 0;
+        for(char c: str.toCharArray()){
+            if(index % 2 == 0){
+                encoded.append((char) c + 2);
+            }else{
+                encoded.append((char) c + 3);
+            }
+            index++;
         }
 
         return encoded.toString();
@@ -28,8 +32,14 @@ public class CodificadorRafael implements Codificador{
     public String decodifica(String str) {
         StringBuilder encoded = new StringBuilder();
         
-        for (char c : str.toCharArray()) {
-            encoded.append((char) (c - 1));
+        int index = 0;
+        for(char c: str.toCharArray()) {
+            if(index % 2 == 0){
+                encoded.append((char) c - 2);
+            }else{
+                encoded.append((char) c - 3);
+            }
+            index++;
         }
         
         return encoded.toString();
